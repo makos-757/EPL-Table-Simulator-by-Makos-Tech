@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to external stylesheet -->
+    <link rel="icon" href="https://assets.football-logos.cc/logos/england/700x700/english-premier-league.ee1e9b08.png">
+    <link rel="stylesheet" href="style.css">
+    <title>EPL Table</title>
+</head>
+<body>
+  <div class="container">
+    <!-- Header with logo and title -->
+    <div class="container__header">
+      <img class="container__logo" src="https://cdn.freebiesupply.com/images/thumbs/2x/premier-league-logo.png" alt="Premier League">
+      <h1 class="container__title">Premier League Table</h1>
+    </div>
+    <!-- Match selector for head-to-head results -->
+    <div class="container__match">
+      <label class="match__label">Select a match result:</label>
+      <select class="match__select" id="match__team1">
+        <option value="">-- Team 1 --</option>
+      </select>
+      <select class="match__select match__result" id="match__result">
+        <option value="W">Win</option>
+        <option value="D">Draw</option>
+        <option value="L">Loss</option>
+      </select>
+      <select class="match__select" id="match__team2">
+        <option value="">-- Team 2 --</option>
+      </select>
+      <button class="form__button" onClick="recordMatch()">Record Result</button>
+    </div>
+    <!-- Main league table -->
+    <table class="container__table">
+      <thead>
+        <tr>
+          <th class="table__ClubColumn">Club</th>
+          <th class="table__PGColumn">P</th>
+          <th class="table__WColumn">W</th>
+          <th class="table__DColumn">D</th>
+          <th class="table__LColumn">L</th>
+          <th class="table__PointsColumn">Pts</th>
+        </tr>
+      </thead>
+      <tbody id="clubsTable">
+      </tbody>
+    </table>
+    <!-- Controls -->
+    <div class="container__controls">
+      <button class="container__button" onClick="reset()">Reset Points</button>
+    </div>
+    <!-- Form to add or remove clubs -->
+    <div class="container__form">
+      <input class="form__input" type="text" id="club__name" name="club__name" placeholder="Club name (short)" required>
+      <input class="form__input" type="url" id="club__badge" name="club__badge" placeholder="Badge URL" required>
+      <br>
+      <button class="form__button" onClick="addClub()">Add</button>
+      <button class="form__button form__button--danger" onClick="removeClub()">Remove</button>
+    </div>
+    <!-- Acknowledge Makos Tech -->
+    <div class="container__footer">
+      <a class="container__credit" href="https://makostech.me" target="_blank" rel="noopener noreferrer">Made with ❤️ by Makos Tech</a>
+    </div>
+  </div>
+  <!-- Link to external JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

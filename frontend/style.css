@@ -1,0 +1,409 @@
+/* EPL Table Styles */
+/* Modern dark theme with EPL purple and green colors */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Color variables for easy theme changes */
+:root {
+  --epl-purple: #38003c;
+  --epl-green: #00ff85;
+  --epl-white: #ffffff;
+  --table-bg: #1a1a2e;
+  --table-header: #16213e;
+  --table-row-even: #0f3460;
+  --table-row-odd: #1a1a2e;
+  --gold: #ffd700;
+  --green: #00ff85;
+  --red: #e94560;
+  --yellow: #ffc107;
+}
+
+/* Reset default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body with gradient background */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #38003c 0%, #00ff85 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Main container card */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Header section with logo and title */
+.container__header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 25px;
+  gap: 15px;
+}
+
+/* Logo styling */
+.container__logo {
+  height: 60px;
+  width: auto;
+}
+
+/* Title text styling */
+.container__title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #38003c;
+  letter-spacing: -0.5px;
+}
+
+/* Table base styling */
+.container__table {
+  border-collapse: collapse;
+  width: 100%;
+  background: var(--table-bg);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Table header styling */
+.container__table thead {
+  background: var(--epl-purple);
+  color: var(--epl-white);
+}
+
+/* Table header cells */
+.container__table th {
+  padding: 10px 4px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 3px solid var(--epl-green);
+}
+
+/* Table data cells */
+.container__table td {
+  padding: 8px 4px;
+  text-align: center;
+  color: var(--epl-white);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Table rows */
+.container__table tbody tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
+}
+
+/* Alternating row colors */
+.container__table tbody tr:nth-child(even) {
+  background: var(--table-row-even);
+}
+
+.container__table tbody tr:nth-child(odd) {
+  background: var(--table-row-odd);
+}
+
+/* Row hover effect */
+.container__table tbody tr:hover {
+  background: rgba(0, 255, 133, 0.15);
+}
+
+/* Club column - left aligned with small padding, one line */
+.container__table td.table__ClubColumn,
+.table__ClubColumn {
+  text-align: left;
+  padding-left: 10px;
+  white-space: nowrap;
+  width: 44%;
+}
+
+/* Club badge image */
+.table__badges {
+  height: 22px;
+  width: 22px;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+/* Club name text */
+.table__NameColumn {
+  vertical-align: middle;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* Points column highlight */
+.table__PointsColumn {
+  font-weight: 700;
+  color: var(--epl-green);
+  font-size: 15px;
+}
+
+.table__PGColumn,
+.table__WColumn,
+.table__DColumn,
+.table__LColumn {
+  width: 7%;
+}
+
+.table__PointsColumn {
+  width: 8%;
+}
+
+/* Position number next to logo */
+.table__PosNumber {
+  font-weight: 700;
+  color: var(--gold);
+  margin-right: 6px;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+/* Form container */
+.container__form {
+  margin: 25px 0 15px;
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+/* Input fields */
+.form__input {
+  padding: 10px 15px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  margin: 5px;
+  width: 200px;
+  transition: border-color 0.2s ease;
+}
+
+/* Input focus state */
+.form__input:focus {
+  outline: none;
+  border-color: var(--epl-purple);
+}
+
+/* Form buttons base */
+.form__button {
+  background: var(--epl-purple);
+  color: var(--epl-white);
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 5px;
+  transition: all 0.2s ease;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Form button hover */
+.form__button:hover {
+  background: var(--epl-green);
+  color: var(--epl-purple);
+  transform: translateY(-2px);
+}
+
+/* Danger button for remove */
+.form__button--danger {
+  background: var(--red);
+}
+
+.form__button--danger:hover {
+  background: #ff6b7a;
+  color: var(--epl-white);
+}
+
+/* Control buttons container */
+.container__controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0;
+  align-items: center;
+}
+
+/* Primary control button */
+.container__button {
+  background: var(--epl-green);
+  color: var(--epl-purple);
+  border: none;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container__button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 255, 133, 0.4);
+}
+
+/* Footer with credit link */
+.container__footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Credit link styling */
+.container__credit {
+  color: #001a66;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.container__credit:hover {
+  color: var(--epl-green);
+  text-decoration: underline;
+}
+
+/* Match selector container */
+.container__match {
+  margin: 20px 0;
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Match label */
+.match__label {
+  font-weight: 700;
+  color: #38003c;
+  font-size: 14px;
+}
+
+/* Match dropdown selects */
+.match__select {
+  padding: 10px 15px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  background: white;
+  min-width: 140px;
+  cursor: pointer;
+}
+
+.match__select:focus {
+  outline: none;
+  border-color: var(--epl-purple);
+}
+
+/* Result select highlight */
+.match__result {
+  border-color: var(--epl-green);
+  font-weight: 700;
+}
+
+/* Responsive design for tablets */
+@media only screen and (max-width: 768px) {
+  .container {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .container__title {
+    font-size: 20px;
+  }
+
+  .container__logo {
+    height: 40px;
+  }
+
+  .container__table th,
+  .container__table td {
+    padding: 5px 3px;
+    font-size: 11px;
+  }
+
+  .table__badges {
+    height: 18px;
+    width: 18px;
+    margin-right: 4px;
+  }
+
+  .form__input {
+    width: 150px;
+    font-size: 12px;
+  }
+
+  .form__button {
+    font-size: 12px;
+    padding: 8px 15px;
+  }
+
+  .container__controls {
+    flex-wrap: wrap;
+  }
+
+  .container__button {
+    font-size: 12px;
+    padding: 10px 15px;
+  }
+
+  .container__match {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .match__select {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+/* Responsive design for phones */
+@media only screen and (max-width: 480px) {
+  .table__PGColumn,
+  .table__WColumn,
+  .table__DColumn,
+  .table__LColumn {
+    display: none;
+  }
+
+  .container__table th,
+  .container__table td {
+    padding: 5px 3px;
+    font-size: 11px;
+  }
+
+  .form__input {
+    width: 120px;
+    font-size: 11px;
+  }
+
+  .container__controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .container__button {
+    width: 100%;
+  }
+}
