@@ -10,7 +10,7 @@ A modern, interactive Premier League table application built with HTML, CSS, and
 - Sort by name (manual button)
 - Reset all points
 - Modern UI styled like the official EPL table
-- Interactive W/D/L buttons to update match results
+- Head-to-head match results with duplicate prevention
 - Auto-sorting by points
 - Responsive design for mobile and desktop
 - Acknowledge button linking to Makos Tech
