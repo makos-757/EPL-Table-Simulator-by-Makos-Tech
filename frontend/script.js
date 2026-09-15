@@ -1,10 +1,5 @@
-// EPL Table - Main JavaScript File
-// Handles club data, sorting, and match result updates
-// Added comments for clarity and maintainability
-
 // Track played matches to prevent duplicates
 let playedMatches = []
-
 // Reset all match statistics and clear match history
 const reset = () => {
     for (let club of clubs) {
@@ -15,7 +10,6 @@ const reset = () => {
     playedMatches = []
     printClubs(clubs)
 }
-
 // Update the match dropdowns with current club list
 const updateMatchDropdowns = () => {
     const team1Select = document.getElementById('match__team1')
@@ -27,33 +21,27 @@ const updateMatchDropdowns = () => {
         team2Select.innerHTML += `<option value="${club.name}">${club.name}</option>`
     })
 }
-
 // Record a head-to-head match result
 const recordMatch = () => {
     const team1Name = document.getElementById('match__team1').value
     const team2Name = document.getElementById('match__team2').value
     const result = document.getElementById('match__result').value
-
     if (!team1Name || !team2Name) {
         alert('Please select both teams')
         return
     }
-
     if (team1Name === team2Name) {
         alert('A team cannot play against itself')
         return
     }
-
     // Check if these teams have already played
     const matchKey = [team1Name, team2Name].sort().join(' vs ')
     if (playedMatches.includes(matchKey)) {
         alert('These teams have already played each other')
         return
     }
-
     const team1 = clubs.find(c => c.name === team1Name)
     const team2 = clubs.find(c => c.name === team2Name)
-
     if (result === 'W') {
         team1.wins++
         team2.losses++
@@ -64,18 +52,14 @@ const recordMatch = () => {
         team1.losses++
         team2.wins++
     }
-
     // Mark this match as played
     playedMatches.push(matchKey)
-
     // Reset dropdowns
     document.getElementById('match__team1').value = ''
     document.getElementById('match__team2').value = ''
     document.getElementById('match__result').value = 'W'
-
     printClubs(clubs)
 }
-
 // Render the table HTML
 const printClubs = (clubs) => {
     // Sort by points first for correct position numbering
@@ -99,7 +83,6 @@ const printClubs = (clubs) => {
     document.getElementById("clubsTable").innerHTML = element
     updateMatchDropdowns()
 }
-
 // Add a new club to the table
 const addClub = () => {
     let clubName = capitalizeFirstLetter(document.getElementById('club__name').value)
@@ -121,7 +104,6 @@ const addClub = () => {
     }
     clearInput()
 }
-
 // Remove a club from the table
 const removeClub = () => {
     let clubName = capitalizeFirstLetter(document.getElementById('club__name').value)
@@ -140,13 +122,11 @@ const removeClub = () => {
         console.error(`There's not a club called ${clubName}`)
     }
 }
-
 // Clear the input fields
 const clearInput = () => {
     document.getElementById('club__name').value = ''
     document.getElementById('club__badge').value = ''
 }
-
 // Capitalize first letter of each word
 const capitalizeFirstLetter = (string) => {
     let arr = string.split(' ')
@@ -155,7 +135,6 @@ const capitalizeFirstLetter = (string) => {
     }
     return arr.join(' ')
 }
-
 // Initial club data with short names
 let clubs = [
     { name: "Liverpool", wins: 4, draws: 2, losses: 0, badge: "https://resources.premierleague.com/premierleague/badges/25/t14.png" },
@@ -179,6 +158,5 @@ let clubs = [
     { name: "Burnley", wins: 0, draws: 2, losses: 4, badge: "https://resources.premierleague.com/premierleague/badges/25/t90.png" },
     { name: "Norwich", wins: 0, draws: 0, losses: 6, badge: "https://resources.premierleague.com/premierleague/badges/25/t45.png" },
 ]
-
 // Initialize the table on page load
 printClubs(clubs)
