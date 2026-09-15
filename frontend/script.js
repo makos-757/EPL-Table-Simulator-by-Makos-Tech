@@ -1,5 +1,6 @@
 // EPL Table - Main JavaScript File
 // Handles club data, sorting, and match result updates
+// Added comments for clarity and maintainability
 
 // Track played matches to prevent duplicates
 let playedMatches = []
