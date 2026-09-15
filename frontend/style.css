@@ -290,6 +290,7 @@ body {
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
+  border: 1px solid #e0e0e0;
 }
 
 /* Match label */
